@@ -238,6 +238,8 @@ export function AdminDashboard() {
   }
 
   return (
+    <>
+      {authLoading || !session || !isAuthorized ? null : (
     <div className="flex min-h-screen bg-background">
       <Sidebar
         currentView={currentView}
@@ -281,6 +283,8 @@ export function AdminDashboard() {
         )}
       </main>
     </div>
+      )}
+    </>
   )
 }
 
